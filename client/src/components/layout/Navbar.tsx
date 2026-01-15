@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Cpu } from "lucide-react";
+import { Menu, X, Network } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -12,10 +12,14 @@ export function Navbar() {
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/">
           <a className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:border-primary/50 transition-colors">
-              <Cpu className="w-6 h-6 text-primary" />
+            <div className="relative w-10 h-10 flex items-center justify-center">
+              <div className="absolute inset-0 bg-primary/20 blur-sm rounded-lg group-hover:bg-primary/30 transition-colors" />
+              <div className="relative w-full h-full rounded-lg bg-background border border-primary/40 flex items-center justify-center group-hover:border-primary transition-colors overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
+                <Network className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+              </div>
             </div>
-            <span className="font-display text-2xl font-bold tracking-tight">neqtra</span>
+            <span className="font-display text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/70">neqtra</span>
           </a>
         </Link>
 
