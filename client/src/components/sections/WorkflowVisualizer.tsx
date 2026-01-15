@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import visualLogicImg from "@assets/generated_images/minimalist_node-based_workflow_with_blue_arrows_and_white_background.png";
+import visualLogicImg from "@assets/generated_images/large_clear_nodes_with_blue_arrows_on_white_background.png";
 
 export function WorkflowVisualizer() {
   return (
-    <section className="py-24 border-y border-foreground/5 bg-foreground/[0.02] overflow-hidden relative">
+    <section className="py-24 border-y border-foreground/5 bg-secondary/50 overflow-hidden relative">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           
