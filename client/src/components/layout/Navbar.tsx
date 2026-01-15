@@ -1,23 +1,24 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Network } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@assets/fc1a4d76-7cb3-4a22-8df8-c70f5127ea7c_1768498703535.png";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-background/80 backdrop-blur-md">
+    <nav className="fixed top-0 w-full z-50 border-b border-foreground/5 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/">
           <a className="flex items-center gap-2 group">
-            <div className="relative w-10 h-10 flex items-center justify-center">
-              <div className="absolute inset-0 bg-primary/20 blur-sm rounded-lg group-hover:bg-primary/30 transition-colors" />
-              <div className="relative w-full h-full rounded-lg bg-background border border-primary/40 flex items-center justify-center group-hover:border-primary transition-colors overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
-                <Network className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
-              </div>
+            <div className="relative w-12 h-12 flex items-center justify-center">
+              <img 
+                src={logo} 
+                alt="neqtra logo" 
+                className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+              />
             </div>
             <span className="font-display text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground to-foreground/70">neqtra</span>
           </a>
