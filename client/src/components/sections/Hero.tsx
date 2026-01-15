@@ -37,7 +37,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-display font-bold leading-tight tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60"
+            className="text-5xl md:text-7xl font-display font-bold leading-tight tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/60"
           >
             Orchestrate <span className="text-glow text-primary">Intelligence</span>
           </motion.h1>
@@ -62,7 +62,7 @@ export function Hero() {
               Start Building Free
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-white/10 bg-white/5 hover:bg-white/10 hover:text-white rounded-full backdrop-blur-sm">
+            <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-foreground/10 bg-foreground/5 hover:bg-foreground/10 hover:text-foreground rounded-full backdrop-blur-sm">
               <Play className="mr-2 w-5 h-5" />
               Watch Demo
             </Button>

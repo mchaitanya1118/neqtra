@@ -64,10 +64,10 @@ export function FeatureGrid() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="group p-8 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/50 hover:bg-white/[0.07] transition-all duration-300"
+              className="group p-8 rounded-2xl bg-foreground/[0.02] border border-foreground/5 hover:border-primary/50 hover:bg-foreground/[0.04] transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <feature.icon className="w-6 h-6 text-primary group-hover:text-white transition-colors" />
+              <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <feature.icon className="w-6 h-6 text-primary group-hover:text-foreground transition-colors" />
               </div>
               <h3 className="text-xl font-bold mb-3 font-display group-hover:text-primary transition-colors">
                 {feature.title}

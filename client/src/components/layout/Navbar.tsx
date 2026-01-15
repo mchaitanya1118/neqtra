@@ -19,7 +19,7 @@ export function Navbar() {
                 <Network className="w-6 h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
             </div>
-            <span className="font-display text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/70">neqtra</span>
+            <span className="font-display text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground to-foreground/70">neqtra</span>
           </a>
         </Link>
 
