@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
+import visualLogicImg from "@assets/generated_images/minimalist_node-based_visual_logic_editor_interface.png";
 
 export function WorkflowVisualizer() {
   return (
-    <section className="py-24 border-y border-white/5 bg-black/20 overflow-hidden relative">
+    <section className="py-24 border-y border-foreground/5 bg-foreground/[0.02] overflow-hidden relative">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           
@@ -24,7 +25,7 @@ export function WorkflowVisualizer() {
                 "One-click deployment to edge"
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-lg font-medium">
-                  <span className="w-2 h-2 rounded-full bg-secondary shadow-[0_0_10px_hsl(var(--secondary))]" />
+                  <span className="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_hsl(var(--primary))]" />
                   {item}
                 </li>
               ))}
@@ -32,57 +33,25 @@ export function WorkflowVisualizer() {
           </div>
 
           <div className="lg:w-1/2 w-full">
-            <div className="relative aspect-video rounded-xl bg-card border border-white/10 shadow-2xl overflow-hidden p-8">
-              {/* Abstract Node Graph Animation */}
-              <div className="absolute inset-0 bg-grid opacity-30" />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative aspect-video rounded-xl border border-foreground/10 shadow-2xl overflow-hidden group"
+            >
+              <img 
+                src={visualLogicImg} 
+                alt="Visual Logic Editor" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
               
-              <svg className="absolute inset-0 w-full h-full pointer-events-none">
-                <motion.path 
-                  d="M 100 150 C 250 150, 250 100, 400 100"
-                  fill="none"
-                  stroke="hsl(var(--primary))"
-                  strokeWidth="2"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-                />
-                <motion.path 
-                  d="M 100 150 C 250 150, 250 250, 400 250"
-                  fill="none"
-                  stroke="hsl(var(--secondary))"
-                  strokeWidth="2"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 2.5, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-                />
-              </svg>
-
-              {/* Nodes */}
-              <motion.div 
-                className="absolute top-[130px] left-[60px] p-3 rounded-lg bg-card border border-primary/50 text-xs font-mono shadow-[0_0_15px_-5px_hsl(var(--primary))]"
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              >
-                Input: Trigger
-              </motion.div>
-
-              <motion.div 
-                className="absolute top-[80px] right-[60px] p-3 rounded-lg bg-card border border-primary/50 text-xs font-mono"
-                animate={{ y: [0, 5, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              >
-                LLM: Analysis
-              </motion.div>
-
-              <motion.div 
-                className="absolute bottom-[80px] right-[60px] p-3 rounded-lg bg-card border border-secondary/50 text-xs font-mono shadow-[0_0_15px_-5px_hsl(var(--secondary))]"
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              >
-                Action: Database
-              </motion.div>
-
-            </div>
+              {/* Overlay elements to make it feel interactive */}
+              <div className="absolute top-4 right-4 flex gap-2">
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-[10px] font-mono text-white/50 bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm">LIVE_TRACE</span>
+              </div>
+            </motion.div>
           </div>
 
         </div>
