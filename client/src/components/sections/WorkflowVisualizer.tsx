@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import visualLogicImg from "@assets/generated_images/minimalist_node-based_visual_logic_editor_interface.png";
+import visualLogicImg from "@assets/generated_images/minimalist_node-based_workflow_with_blue_arrows_and_white_background.png";
 
 export function WorkflowVisualizer() {
   return (
@@ -7,7 +7,7 @@ export function WorkflowVisualizer() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           
-          <div className="lg:w-1/2">
+          <div className="lg:w-2/5">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
               Visual Logic. <br />
               <span className="text-primary">Infinite Possibility.</span>
@@ -32,19 +32,19 @@ export function WorkflowVisualizer() {
             </ul>
           </div>
 
-          <div className="lg:w-1/2 w-full">
+          <div className="lg:w-3/5 w-full">
             <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative aspect-video rounded-xl border border-foreground/10 shadow-2xl overflow-hidden group"
+              className="relative aspect-[16/10] rounded-2xl border border-foreground/5 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] overflow-hidden group bg-white"
             >
               <img 
                 src={visualLogicImg} 
                 alt="Visual Logic Editor" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-[1.02]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/[0.02] to-transparent pointer-events-none" />
               
               {/* Overlay elements to make it feel interactive */}
               <div className="absolute top-4 right-4 flex gap-2">
