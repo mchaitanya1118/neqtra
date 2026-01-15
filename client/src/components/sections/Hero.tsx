@@ -1,43 +1,13 @@
-import { motion, useTransform, useSpring, useMotionValue } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, CheckCircle2 } from "lucide-react";
 import heroBg from "@assets/generated_images/abstract_glowing_neural_network_background.png";
-import { useEffect } from "react";
 
 export function Hero() {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const rotateX = useSpring(useTransform(mouseY, [-300, 300], [5, -5]), { damping: 20 });
-  const rotateY = useSpring(useTransform(mouseX, [-300, 300], [-5, 5]), { damping: 20 });
-
-  const bgX = useSpring(useTransform(mouseX, [-500, 500], [20, -20]), { damping: 30 });
-  const bgY = useSpring(useTransform(mouseY, [-500, 500], [20, -20]), { damping: 30 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
-      mouseX.set(clientX - centerX);
-      mouseY.set(clientY - centerY);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
-
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Image & Overlay */}
-      <motion.div 
-        className="absolute inset-0 z-0"
-        style={{
-          x: bgX,
-          y: bgY,
-          scale: 1.05
-        }}
-      >
+      <div className="absolute inset-0 z-0">
         <img 
           src={heroBg} 
           alt="AI Neural Network Background" 
@@ -45,13 +15,10 @@ export function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
         <div className="absolute inset-0 bg-grid opacity-20" />
-      </motion.div>
+      </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <motion.div 
-          className="max-w-4xl mx-auto text-center"
-          style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-        >
+        <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -114,7 +81,7 @@ export function Hero() {
               </div>
             ))}
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
