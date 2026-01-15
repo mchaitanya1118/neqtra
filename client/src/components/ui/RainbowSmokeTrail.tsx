@@ -37,8 +37,8 @@ export function RainbowSmokeTrail() {
           vx: (Math.random() - 0.5) * 2,
           vy: (Math.random() - 0.5) * 2,
           life: 1,
-          color: `hsla(${hue.current}, 80%, 60%, 0.4)`,
-          size: Math.random() * 25 + 15,
+          color: `hsla(${hue.current}, 90%, 70%, 0.8)`,
+          size: Math.random() * 30 + 20,
         });
       }
       hue.current = (hue.current + 2) % 360;
@@ -52,8 +52,8 @@ export function RainbowSmokeTrail() {
         const p = particles.current[i];
         p.x += p.vx;
         p.y += p.vy;
-        p.life -= 0.015;
-        p.size += 0.5;
+        p.life -= 0.012;
+        p.size += 0.6;
 
         if (p.life <= 0) {
           particles.current.splice(i, 1);
@@ -62,7 +62,7 @@ export function RainbowSmokeTrail() {
 
         ctx.beginPath();
         const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size);
-        const colorBase = p.color.replace('0.4', (p.life * 0.4).toString());
+        const colorBase = p.color.replace('0.8', (p.life * 0.9).toString());
         gradient.addColorStop(0, colorBase);
         gradient.addColorStop(1, "transparent");
         
