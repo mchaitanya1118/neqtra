@@ -10,7 +10,6 @@ export function CustomCursor() {
 
   useEffect(() => {
     const mouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientX });
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
     };
