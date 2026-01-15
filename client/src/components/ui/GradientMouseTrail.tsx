@@ -1,65 +1,91 @@
-import { useEffect, useState } from "react";
-import { motion, useSpring, useMotionValue } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 export function GradientMouseTrail() {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  // Smooth springs for fluid motion
-  const springConfig = { damping: 40, stiffness: 150 };
-  const smoothX = useSpring(mouseX, springConfig);
-  const smoothY = useSpring(mouseY, springConfig);
-
-  // Secondary point for trail stretching
-  const trailX = useSpring(mouseX, { damping: 25, stiffness: 80 });
-  const trailY = useSpring(mouseY, { damping: 25, stiffness: 80 });
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const mouse = useRef({ x: 0, y: 0 });
+  const points = useRef<{ x: number; y: number }[]>([]);
+  const MAX_POINTS = 40;
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     };
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Update points
+      points.current.unshift({ x: mouse.current.x, y: mouse.current.y });
+      if (points.current.length > MAX_POINTS) {
+        points.current.pop();
+      }
+
+      if (points.current.length > 2) {
+        ctx.beginPath();
+        ctx.moveTo(points.current[0].x, points.current[0].y);
+
+        for (let i = 1; i < points.current.length - 2; i++) {
+          const xc = (points.current[i].x + points.current[i + 1].x) / 2;
+          const yc = (points.current[i].y + points.current[i + 1].y) / 2;
+          ctx.quadraticCurveTo(points.current[i].x, points.current[i].y, xc, yc);
+        }
+
+        // Color and glow effect
+        const gradient = ctx.createLinearGradient(
+          points.current[0].x, points.current[0].y,
+          points.current[points.current.length - 1].x, points.current[points.current.length - 1].y
+        );
+        
+        // Refined organic gradient colors from the reference
+        gradient.addColorStop(0, "hsla(180, 100%, 50%, 0.6)"); // Cyan
+        gradient.addColorStop(0.5, "hsla(280, 100%, 60%, 0.4)"); // Purple
+        gradient.addColorStop(1, "transparent");
+
+        ctx.shadowBlur = 40;
+        ctx.shadowColor = "hsla(180, 100%, 50%, 0.4)";
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = 45;
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+        ctx.stroke();
+
+        // Secondary subtle inner glow
+        ctx.shadowBlur = 10;
+        ctx.lineWidth = 15;
+        ctx.strokeStyle = "hsla(180, 100%, 80%, 0.2)";
+        ctx.stroke();
+      }
+
+      requestAnimationFrame(animate);
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      mouse.current.x = e.clientX;
+      mouse.current.y = e.clientY;
+    };
+
+    window.addEventListener("resize", resize);
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
+    resize();
+    animate();
+
+    return () => {
+      window.removeEventListener("resize", resize);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[1] overflow-hidden">
-      {/* Primary Cyan/Green Blob */}
-      <motion.div
-        className="absolute w-[800px] h-[800px] rounded-full opacity-[0.2] blur-[140px]"
-        style={{
-          x: smoothX,
-          y: smoothY,
-          translateX: "-50%",
-          translateY: "-50%",
-          background: "radial-gradient(circle, hsla(180, 100%, 50%, 0.6) 0%, transparent 70%)",
-        }}
-      />
-      
-      {/* Secondary Purple Blob (Trailing) */}
-      <motion.div
-        className="absolute w-[600px] h-[600px] rounded-full opacity-[0.15] blur-[120px]"
-        style={{
-          x: trailX,
-          y: trailY,
-          translateX: "-30%",
-          translateY: "-30%",
-          background: "radial-gradient(circle, hsla(270, 100%, 60%, 0.5) 0%, transparent 70%)",
-        }}
-      />
-
-      {/* Tertiary Deep Blue Accent */}
-      <motion.div
-        className="absolute w-[500px] h-[500px] rounded-full opacity-[0.1] blur-[100px]"
-        style={{
-          x: trailX,
-          y: trailY,
-          translateX: "-70%",
-          translateY: "-70%",
-          background: "radial-gradient(circle, hsla(210, 100%, 50%, 0.4) 0%, transparent 70%)",
-        }}
-      />
-    </div>
+    <canvas
+      ref={canvasRef}
+      className="fixed inset-0 pointer-events-none z-[1]"
+      style={{ filter: "blur(40px)", opacity: 0.8 }}
+    />
   );
 }
