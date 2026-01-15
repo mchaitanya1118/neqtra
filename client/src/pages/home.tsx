@@ -2,10 +2,12 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { FeatureGrid } from "@/components/sections/FeatureGrid";
 import { WorkflowVisualizer } from "@/components/sections/WorkflowVisualizer";
+import { MouseTrail } from "@/components/ui/MouseTrail";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
+      <MouseTrail />
       <Navbar />
       <main>
         <Hero />
