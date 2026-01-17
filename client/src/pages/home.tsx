@@ -3,6 +3,7 @@ import { Hero } from "@/components/sections/Hero";
 import { FeatureGrid } from "@/components/sections/FeatureGrid";
 import { WorkflowVisualizer } from "@/components/sections/WorkflowVisualizer";
 import { GradientMouseTrail } from "@/components/ui/GradientMouseTrail";
+import { HowItWorks } from "@/components/sections/HowItWorks";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <HowItWorks />
         <WorkflowVisualizer />
         <FeatureGrid />
       </main>
