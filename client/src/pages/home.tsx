@@ -4,6 +4,7 @@ import { FeatureGrid } from "@/components/sections/FeatureGrid";
 import { WorkflowVisualizer } from "@/components/sections/WorkflowVisualizer";
 import { GradientMouseTrail } from "@/components/ui/GradientMouseTrail";
 import { HowItWorks } from "@/components/sections/HowItWorks";
+import { OnePromptSection } from "@/components/sections/OnePromptSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <main>
         <Hero />
         <HowItWorks />
+        <OnePromptSection />
         <WorkflowVisualizer />
         <FeatureGrid />
       </main>
