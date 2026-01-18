@@ -36,7 +36,7 @@ export function GridBackground() {
             {[...Array(5)].map((_, i) => (
                 <motion.div
                     key={i}
-                    className="absolute bg-green-500/20 w-32 h-[1px] rounded-full blur-[2px]"
+                    className="absolute bg-white/20 w-32 h-[1px] rounded-full blur-[2px]"
                     style={{
                         left: `${10 + Math.random() * 80}%`,
                         top: `${Math.random() * 50}%`,

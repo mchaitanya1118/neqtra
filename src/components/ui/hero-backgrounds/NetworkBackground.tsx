@@ -66,7 +66,7 @@ export function NetworkBackground() {
 
                     if (dist < connectionDistance) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(255, 109, 90, ${1 - dist / connectionDistance})`; // Brand color #ff6d5a
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / connectionDistance})`; // White
                         ctx.lineWidth = 1;
                         ctx.moveTo(p1.x, p1.y);
                         ctx.lineTo(p2.x, p2.y);

@@ -18,7 +18,7 @@ export function AuroraBackground() {
                     repeat: Infinity,
                     ease: "easeInOut"
                 }}
-                className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-blue-600 blur-[120px] opacity-30 mix-blend-screen"
+                className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-white blur-[120px] opacity-[0.05] mix-blend-screen"
             />
 
             <motion.div
@@ -34,7 +34,7 @@ export function AuroraBackground() {
                     ease: "easeInOut",
                     delay: 2
                 }}
-                className="absolute top-[10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-[#ff6d5a] blur-[150px] opacity-20 mix-blend-screen"
+                className="absolute top-[10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-slate-200 blur-[150px] opacity-[0.05] mix-blend-screen"
             />
 
             <motion.div
@@ -48,7 +48,7 @@ export function AuroraBackground() {
                     ease: "easeInOut",
                     delay: 5
                 }}
-                className="absolute bottom-[-20%] left-[20%] w-[70%] h-[70%] rounded-full bg-purple-900 blur-[130px] opacity-30 mix-blend-screen"
+                className="absolute bottom-[-20%] left-[20%] w-[70%] h-[70%] rounded-full bg-gray-100 blur-[130px] opacity-[0.05] mix-blend-screen"
             />
         </div>
     );
