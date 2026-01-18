@@ -1,46 +1,60 @@
 import { motion } from "framer-motion";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 
 export function HowItWorks() {
   const steps = [
     {
       id: "01",
-      title: "Integration",
-      description: "Connect your existing data sources and models in seconds. No complex setup required."
+      title: "Neurons and Layers",
+      description: "A neural network consists of interconnected nodes called neurons. Neurons are organized into layers."
     },
     {
       id: "02",
-      title: "Orchestration",
-      description: "Define logic with our visual builder. Let the engine handle dependencies and execution flow."
+      title: "Activation Function",
+      description: "Each neuron applies an activation function to the weighted sum of its inputs and produces an output"
     },
     {
       id: "03",
-      title: "Computation",
-      description: "Workflows are processed on our high-performance GPU grid for maximum speed."
+      title: "Feedforward Process",
+      description: "The inputs are multiplied by their respective weights, summed up, and passed through the activation function."
     },
     {
       id: "04",
       title: "Optimization",
-      description: "Real-time feedback loops analyze performance and self-optimize future runs."
+      description: "And passed through the activation function. The inputs are multiplied by their respective weights, summed up"
     }
   ];
 
   return (
     <section className="py-24 bg-background overflow-hidden relative">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mb-24">
-          <p className="text-sm font-mono text-muted-foreground mb-4">[ how it works ]</p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1]"
-          >
-            Essential building blocks <br />
-            of intelligent <span className="text-primary">automation</span>
-          </motion.h2>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
+          <div className="max-w-4xl">
+            <p className="text-sm font-mono text-muted-foreground mb-4">[ how it works ]</p>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1]"
+            >
+              Essential building blocks <br />
+              of artificial intelligence <br />
+              (AI) systems
+            </motion.h2>
+          </div>
+
+          <div className="flex gap-4">
+            <button className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors">
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <button className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors">
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-y border-white/10">
@@ -55,8 +69,11 @@ export function HowItWorks() {
             >
               <div className="mb-12">
                 <span
-                  className="text-8xl font-bold text-transparent select-none transition-all duration-500 group-hover:text-primary/10"
-                  style={{ WebkitTextStroke: '1px rgba(255, 255, 255, 0.2)' }}
+                  className="text-8xl font-bold text-transparent select-none transition-all duration-500"
+                  style={{
+                    WebkitTextStroke: '1px #a78bfa', // Light purple/blue outline
+                    textShadow: '0 0 20px rgba(167, 139, 250, 0.1)'
+                  }}
                 >
                   {step.id}
                 </span>
