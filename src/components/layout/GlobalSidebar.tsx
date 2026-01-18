@@ -64,13 +64,8 @@ export function GlobalSidebar({ className }: GlobalSidebarProps) {
                         <div className="flex items-center gap-2">
                             <div className="text-[#ff6d5a]">
                                 {/* Simple node-like logo to match n8n style */}
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <circle cx="18" cy="5" r="3" />
-                                    <circle cx="6" cy="12" r="3" />
-                                    <circle cx="18" cy="19" r="3" />
-                                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-                                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-                                </svg>
+                                {/* Simple node-like logo to match n8n style */}
+                                <img src="/logo.svg" alt="Neqtra Logo" className="w-6 h-6" />
                             </div>
                             <span className="font-bold tracking-tight text-black text-[15px]">neqtra</span>
                         </div>
@@ -79,13 +74,7 @@ export function GlobalSidebar({ className }: GlobalSidebarProps) {
                     {/* Collapsed Logo */}
                     {isCollapsed && (
                         <div className="text-[#ff6d5a]">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <circle cx="18" cy="5" r="3" />
-                                <circle cx="6" cy="12" r="3" />
-                                <circle cx="18" cy="19" r="3" />
-                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-                            </svg>
+                            <img src="/logo.svg" alt="Neqtra Logo" className="w-6 h-6" />
                         </div>
                     )}
 

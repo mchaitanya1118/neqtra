@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/Screenshot_2026-01-15_at_11.10.45_PM_1768498858231.png";
 import { useAuth } from "@/hooks/use-auth";
@@ -9,6 +9,13 @@ import { useAuth } from "@/hooks/use-auth";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { isAuthenticated } = useAuth();
+
+  useEffect(() => {
+    const link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+    if (link) {
+      link.href = '/favicon.png';
+    }
+  }, []);
 
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-foreground/5 bg-background/80 backdrop-blur-md">
