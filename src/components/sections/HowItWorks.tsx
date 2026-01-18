@@ -45,11 +45,11 @@ export function HowItWorks() {
           </div>
 
           <div className="flex gap-4">
-            <button className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors">
-              <ArrowLeft className="w-5 h-5" />
+            <button className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors group">
+              <ArrowLeft className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
             </button>
-            <button className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors">
-              <ArrowRight className="w-5 h-5" />
+            <button className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors group">
+              <ArrowRight className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
             </button>
           </div>
         </div>
