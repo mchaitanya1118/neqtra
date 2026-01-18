@@ -1,0 +1,19 @@
+name: Deploy to Coolify
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Coolify Deployment
+        run: |
+          if [ -z "${{ secrets.COOLIFY_WEBHOOK }}" ]; then
+            echo "Error: COOLIFY_WEBHOOK secret is not set."
+            echo "Please add the COOLIFY_WEBHOOK secret to your repository settings."
+            exit 1
+          fi
+          curl --request GET --url "${{ secrets.COOLIFY_WEBHOOK }}" --header 'Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}'
