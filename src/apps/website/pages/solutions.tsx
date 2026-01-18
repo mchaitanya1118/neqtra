@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Footer } from "@/components/layout/Footer";
 
 
-import { AuroraBackground } from "@/components/ui/hero-backgrounds/AuroraBackground";
+
 
 export default function Solutions() {
     return (
@@ -16,7 +16,7 @@ export default function Solutions() {
             <Navbar />
             <main className="pt-24 pb-16">
                 <section className="relative min-h-[60vh] flex items-center justify-center text-center overflow-hidden">
-                    <AuroraBackground />
+                    {/* Background removed */}
                     <div className="container mx-auto px-6 py-20 relative z-10">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}

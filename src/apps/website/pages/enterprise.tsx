@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Footer } from "@/components/layout/Footer";
 
 
-import { SecurityBackground } from "@/components/ui/hero-backgrounds/SecurityBackground";
+
 
 export default function Enterprise() {
     return (
@@ -15,7 +15,7 @@ export default function Enterprise() {
             <Navbar />
             <main className="pt-24 pb-16">
                 <section className="relative min-h-[60vh] flex items-center justify-center text-center overflow-hidden">
-                    <SecurityBackground />
+                    {/* Background removed */}
                     <div className="container mx-auto px-6 py-20 text-center relative z-10">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}

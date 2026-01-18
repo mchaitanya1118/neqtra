@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Footer } from "@/components/layout/Footer";
 
 
-import { GridBackground } from "@/components/ui/hero-backgrounds/GridBackground";
+
 
 export default function Developers() {
     return (
@@ -16,7 +16,7 @@ export default function Developers() {
             <Navbar />
             <main className="pt-24 pb-16">
                 <section className="relative min-h-[60vh] flex items-center justify-center text-center overflow-hidden">
-                    <GridBackground />
+                    {/* Background removed */}
                     <div className="container mx-auto px-6 py-20 text-center relative z-10">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
