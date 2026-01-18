@@ -67,7 +67,7 @@ export function GlobalSidebar({ className }: GlobalSidebarProps) {
                                 {/* Simple node-like logo to match n8n style */}
                                 <img src="/logo.svg" alt="Neqtra Logo" className="w-6 h-6" />
                             </div>
-                            <span className="font-bold tracking-tight text-black text-[15px]">neqtra</span>
+                            <span className="font-bold tracking-tight text-primary text-[15px]">neqtra</span>
                         </div>
                     )}
 

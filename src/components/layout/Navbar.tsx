@@ -21,7 +21,7 @@ export function Navbar() {
                 className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
               />
             </div>
-            <span className="font-display text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground to-foreground/70">neqtra</span>
+            <span className="font-display text-2xl font-bold tracking-tight text-primary">neqtra</span>
           </a>
         </Link>
 
