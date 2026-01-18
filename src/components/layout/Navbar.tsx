@@ -43,7 +43,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           {!isAuthenticated ? (
             <Link href="/login">
-              <a className="text-sm font-medium hover:text-white transition-colors">Sign In</a>
+              <Button variant="outline" className="text-sm font-bold border-white/20 hover:bg-white/10 hover:text-white">Sign In</Button>
             </Link>
           ) : (
             <Link href="/console">
@@ -84,7 +84,7 @@ export function Navbar() {
               <div className="h-px bg-white/5 my-2" />
               {!isAuthenticated ? (
                 <Link href="/login">
-                  <a className="text-lg font-medium">Sign In</a>
+                  <Button variant="outline" className="w-full border-white/20 text-foreground font-bold hover:bg-white/5">Sign In</Button>
                 </Link>
               ) : (
                 <Link href="/console">

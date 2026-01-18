@@ -68,8 +68,8 @@ export function HowItWorks() {
                 <span
                   className="text-8xl font-bold text-transparent select-none transition-all duration-500"
                   style={{
-                    WebkitTextStroke: '1px #a78bfa', // Light purple/blue outline
-                    textShadow: '0 0 20px rgba(167, 139, 250, 0.1)'
+                    WebkitTextStroke: '1px #ff6d5a', // Brand orange outline
+                    textShadow: '0 0 20px rgba(255, 109, 90, 0.1)'
                   }}
                 >
                   {step.id}
