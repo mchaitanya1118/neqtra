@@ -45,6 +45,7 @@ export default function Developers() {
                                 <Github className="mr-2 w-4 h-4" /> View on GitHub
                             </Button>
                         </div>
+                    </div>
                 </section>
 
                 <section className="container mx-auto px-6 py-20">
