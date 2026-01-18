@@ -13,30 +13,40 @@ export default function Platform() {
             <Navbar />
             <main className="pt-24 pb-16">
                 {/* Hero Section */}
-                <section className="container mx-auto px-6 py-20 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="max-w-4xl mx-auto space-y-6"
-                    >
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-r from-white via-white/90 to-white/50 bg-clip-text text-transparent">
-                            The Enterprise AI Platform
-                        </h1>
-                        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                            Scale your AI operations with a platform designed for security, observability, and control.
-                        </p>
-                        <div className="flex justify-center gap-4 pt-4">
-                            <Link href="/console">
-                                <Button size="lg" className="rounded-full h-12 px-8 text-base">
-                                    Start Building <ArrowRight className="ml-2 w-4 h-4" />
+                <section className="relative min-h-[60vh] flex items-center justify-center text-center overflow-hidden">
+                    <div className="absolute inset-0 z-0">
+                        <img
+                            src="/assets/images/hero_platform.png"
+                            alt="Background"
+                            className="w-full h-full object-cover opacity-40 mix-blend-overlay"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background/90" />
+                    </div>
+                    <div className="container mx-auto px-6 py-20 relative z-10">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                            className="max-w-4xl mx-auto space-y-6"
+                        >
+                            <h1 className="text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-r from-white via-white/90 to-white/50 bg-clip-text text-transparent">
+                                The Enterprise AI Platform
+                            </h1>
+                            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                                Scale your AI operations with a platform designed for security, observability, and control.
+                            </p>
+                            <div className="flex justify-center gap-4 pt-4">
+                                <Link href="/console">
+                                    <Button size="lg" className="rounded-full h-12 px-8 text-base">
+                                        Start Building <ArrowRight className="ml-2 w-4 h-4" />
+                                    </Button>
+                                </Link>
+                                <Button variant="outline" size="lg" className="rounded-full h-12 px-8 text-base bg-white/5 border-white/10 hover:bg-white/10">
+                                    Contact Sales
                                 </Button>
-                            </Link>
-                            <Button variant="outline" size="lg" className="rounded-full h-12 px-8 text-base bg-white/5 border-white/10 hover:bg-white/10">
-                                Contact Sales
-                            </Button>
-                        </div>
-                    </motion.div>
+                            </div>
+                        </motion.div>
+                    </div>
                 </section>
 
                 {/* Core Capabilities Grid */}
