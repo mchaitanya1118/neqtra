@@ -2,7 +2,7 @@
 import {
     Menu,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { GlobalSidebar } from "@/components/layout/GlobalSidebar";
 
@@ -12,18 +12,6 @@ interface ConsoleLayoutProps {
 
 export function ConsoleLayout({ children }: ConsoleLayoutProps) {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-    useEffect(() => {
-        const link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
-        if (!link) return;
-
-        const originalIcon = link.href;
-        link.href = '/logo.svg';
-
-        return () => {
-            link.href = '/favicon.png';
-        };
-    }, []);
 
     return (
         <div className="min-h-screen bg-background flex">
