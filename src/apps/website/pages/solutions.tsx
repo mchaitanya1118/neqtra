@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import { Footer } from "@/components/layout/Footer";
 
 
+import { AuroraBackground } from "@/components/ui/hero-backgrounds/AuroraBackground";
+
 export default function Solutions() {
     return (
         <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
@@ -14,14 +16,7 @@ export default function Solutions() {
             <Navbar />
             <main className="pt-24 pb-16">
                 <section className="relative min-h-[60vh] flex items-center justify-center text-center overflow-hidden">
-                    <div className="absolute inset-0 z-0">
-                        <img
-                            src="/assets/images/hero_solutions.png"
-                            alt="Background"
-                            className="w-full h-full object-cover opacity-40 mix-blend-overlay"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background/90" />
-                    </div>
+                    <AuroraBackground />
                     <div className="container mx-auto px-6 py-20 relative z-10">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
