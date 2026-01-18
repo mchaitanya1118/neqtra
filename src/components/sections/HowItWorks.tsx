@@ -2,9 +2,6 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 
-import { ArrowLeft, ArrowRight } from "lucide-react";
-
-
 export function HowItWorks() {
   const steps = [
     {
@@ -39,11 +36,11 @@ export function HowItWorks() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1]"
+              className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.1]"
             >
               Essential building blocks <br />
               of artificial intelligence <br />
-              (AI) systems
+              <span className="text-primary">(AI)</span> systems
             </motion.h2>
           </div>
 
