@@ -42,7 +42,7 @@ export function EditorHeader({ isExecuting, onExecute, onSave }: EditorHeaderPro
                 </Button>
                 <Button
                     onClick={onSave}
-                    className="h-8 bg-[#ff6d5a] hover:bg-[#ff6d5a]/90 text-white text-xs font-medium"
+                    className="h-8 bg-primary hover:bg-primary/90 text-primary-foreground text-xs font-medium"
                 >
                     Save
                 </Button>

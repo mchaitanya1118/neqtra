@@ -209,7 +209,7 @@ function Flow() {
                                         >
                                             Add first step...
                                         </div>
-                                        <button className="text-[#ff6d5a] hover:underline text-base font-normal">
+                                        <button className="text-primary hover:underline text-base font-normal">
                                             or start from a template
                                         </button>
                                     </div>

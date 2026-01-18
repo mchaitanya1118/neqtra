@@ -62,7 +62,7 @@ export function GlobalSidebar({ className }: GlobalSidebarProps) {
                 <div className={`h-14 flex items-center ${isCollapsed ? 'justify-center' : 'justify-between px-4'}`}>
                     {!isCollapsed && (
                         <div className="flex items-center gap-2">
-                            <div className="text-[#ff6d5a]">
+                            <div className="text-primary">
                                 {/* Simple node-like logo to match n8n style */}
                                 {/* Simple node-like logo to match n8n style */}
                                 <img src="/logo.svg" alt="Neqtra Logo" className="w-6 h-6" />
@@ -73,7 +73,7 @@ export function GlobalSidebar({ className }: GlobalSidebarProps) {
 
                     {/* Collapsed Logo */}
                     {isCollapsed && (
-                        <div className="text-[#ff6d5a]">
+                        <div className="text-primary">
                             <img src="/logo.svg" alt="Neqtra Logo" className="w-6 h-6" />
                         </div>
                     )}
@@ -218,7 +218,7 @@ export function GlobalSidebar({ className }: GlobalSidebarProps) {
                             <HelpCircle className="w-[18px] h-[18px]" />
                             {!isCollapsed && "Help"}
                             {/* Red dot notification */}
-                            <span className={`absolute top-0 right-0 w-1.5 h-1.5 bg-[#ff6d5a] rounded-full border border-black/10 ${isCollapsed ? '-right-1 -top-1' : 'left-3'}`}></span>
+                            <span className={`absolute top-0 right-0 w-1.5 h-1.5 bg-primary rounded-full border border-black/10 ${isCollapsed ? '-right-1 -top-1' : 'left-3'}`}></span>
                         </div>
                         {!isCollapsed && <ChevronRight className="w-4 h-4 text-black/30 group-hover:text-black/70" />}
                     </a>
