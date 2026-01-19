@@ -22,7 +22,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-6xl md:text-8xl lg:text-9xl font-display font-medium tracking-tighter leading-[0.9] text-foreground"
+              className="text-5xl md:text-7xl lg:text-8xl font-display font-medium tracking-tighter leading-[0.9] text-foreground"
             >
               Orchestrate <br />
               <span className="text-primary/90">Intelligence</span> <br />
