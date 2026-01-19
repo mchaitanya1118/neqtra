@@ -23,7 +23,16 @@ const promptFeatures = [
 export function OnePromptSection() {
   return (
     <section className="py-32 bg-secondary/30 relative overflow-hidden">
-      <div className="container mx-auto px-6">
+      {/* Background Decor */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 z-0 pointer-events-none opacity-60 mix-blend-multiply dark:mix-blend-lighten max-w-[60%]">
+        <img
+          src="/elements-1.png"
+          alt=""
+          className="w-full h-auto object-contain"
+        />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-20">
           <div className="lg:w-1/2">
             <motion.div
@@ -37,14 +46,14 @@ export function OnePromptSection() {
                 No kidding.
               </h2>
               <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-xl">
-                While others make you prompt for every step, neqtra is different. 
-                Describe your vision once and get a full autonomous system with 
+                While others make you prompt for every step, neqtra is different.
+                Describe your vision once and get a full autonomous system with
                 logic, memory, and integrations—everything.
               </p>
 
               <div className="space-y-8">
                 {promptFeatures.map((feature, i) => (
-                  <motion.div 
+                  <motion.div
                     key={i}
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -84,7 +93,7 @@ export function OnePromptSection() {
                   prompt_engine_v3.0.sh
                 </div>
               </div>
-              
+
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <div className="w-8 h-8 rounded bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">AI</div>
@@ -92,14 +101,14 @@ export function OnePromptSection() {
                     "Build a customer support agent that handles returns, checks inventory in Shopify, and escalates high-value cases to Slack."
                   </div>
                 </div>
-                
+
                 <div className="pl-12 space-y-3">
                   {[
                     { label: "Researching market context...", width: "w-3/4", color: "bg-blue-400" },
                     { label: "Mapping logic flows...", width: "w-full", color: "bg-purple-400" },
                     { label: "Generating secure nodes...", width: "w-5/6", color: "bg-cyan-400" }
                   ].map((task, i) => (
-                    <motion.div 
+                    <motion.div
                       key={i}
                       initial={{ scaleX: 0 }}
                       whileInView={{ scaleX: 1 }}
@@ -110,16 +119,16 @@ export function OnePromptSection() {
                     </motion.div>
                   ))}
                 </div>
-                
+
                 <div className="flex justify-center pt-4">
-                   <div className="px-6 py-2 rounded-lg bg-green-50 text-green-700 text-xs font-bold border border-green-100 flex items-center gap-2">
-                     <Zap className="w-3 h-3 fill-current" />
-                     Workflow Generated Successfully
-                   </div>
+                  <div className="px-6 py-2 rounded-lg bg-green-50 text-green-700 text-xs font-bold border border-green-100 flex items-center gap-2">
+                    <Zap className="w-3 h-3 fill-current" />
+                    Workflow Generated Successfully
+                  </div>
                 </div>
               </div>
             </motion.div>
-            
+
             {/* Decorative elements */}
             <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
             <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-secondary/40 rounded-full blur-3xl -z-10" />
